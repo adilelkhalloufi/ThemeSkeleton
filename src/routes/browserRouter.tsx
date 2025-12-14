@@ -12,26 +12,26 @@ import LandingPage from '@/pages/landing';
 const errorElement = <ErrorPage />;
 const fallbackElement = <ProgressBar />;
 
- 
+
 const Dashboard = loadable(() => import('../pages/dashboard'), {
   fallback: fallbackElement,
 });
 
- 
+
 
 const Register = loadable(() => import('../pages/auth/components/register'), {
   fallback: fallbackElement,
 });
 
- 
+
 const Login = loadable(() => import('../pages/auth/sign-in'), {
   fallback: fallbackElement,
 });
 
- 
- 
- 
- 
+
+
+
+
 
 
 export const browserRouter = createBrowserRouter([
@@ -40,17 +40,13 @@ export const browserRouter = createBrowserRouter([
     element: <LandingPage />,
     errorElement: errorElement,
   },
-  {
-    path: webRoutes.Redirect,
-    element: <Redirect />,
-   },
 
   {
     path: webRoutes.login,
     element: <Login />,
     errorElement: errorElement,
 
-  },  {
+  }, {
     path: webRoutes.register,
     element: <Register />,
     errorElement: errorElement,
@@ -75,7 +71,7 @@ export const browserRouter = createBrowserRouter([
         path: webRoutes.Dashboard,
         element: <Dashboard />,
       },
-    
+
     ],
   },
 
